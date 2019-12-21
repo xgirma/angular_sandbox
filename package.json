@@ -4,5 +4,6 @@
   "description": "A sandbox for the official Angular documentation.",
   "keywords": [],
   "author": "Girma Nigusse <xgirma@gmail.com> (https://github.com/xgirma)",
-  "license": "MIT"
+  "license": "MIT",
+  "devDependencies": {}
 }
