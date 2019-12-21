@@ -1,0 +1,20 @@
+{
+  "name": "angular_playground",
+  "version": "1.0.0",
+  "description": "A sandbox for the official Angular documentation.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/xgirma/angular_playground.git"
+  },
+  "keywords": [],
+  "author": "Girma Nigusse <xgirma@gmail.com> (https://github.com/xgirma)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/xgirma/angular_playground/issues"
+  },
+  "homepage": "https://github.com/xgirma/angular_playground#readme"
+}
