@@ -1,2 +1,2 @@
-# angular_playground
-Based on the official Angualr documentation
+# Angular Sandbox
+A sandbox for the official Angular documentation.
