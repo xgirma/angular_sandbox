@@ -1,0 +1,159 @@
+<!--1. interpolation-->
+<h3>1. Interpolation</h3>
+<p id="interpolation">Current customer: {{ currentCustomer }}</p>
+<p>The sum of 1 + 1 is {{1 + 1}}.</p>
+
+
+<!--2. expression-->
+<h3>2. Expression</h3>
+<p id="expression">The sum of 1 + 1 is not {{1 + 1 + getVal()}}.</p>
+
+
+<!--3. template input variable, car-->
+<h3>3. Template input variable</h3>
+<p>Cars:</p>
+<ul>
+  <li *ngFor="let car of cars" class="cars">
+    {{car.make}} {{car.year}}
+  </li>
+</ul>
+
+
+<!--4. template reference variable, firstNameInput-->
+<h3>4. Template reference variable </h3>
+<p *ngIf="fullName"  id="fullName">Full Name: {{fullName}}</p>
+<label id="templateRefVariable">
+  First Name:
+  <input type="text" #firstNameInput>
+  <button (click)="show(firstNameInput)">Show</button>
+</label>
+
+
+<!--5. template statements-->
+<h3>5. Template Statement</h3>
+<p>Customers:</p>
+<ul id="templateStatements">
+  <li *ngFor="let customer of customers">
+    {{customer.name}} :
+    <button (click)="deleteCustomer(customer.id)">Delete {{customer.name}}</button>
+  </li>
+</ul>
+
+<!--template $event object-->
+<h3>6. Template $event object</h3>
+<div id="eventObject">
+  <p>{{ text }}</p>
+  <button class="btn" (click)='submitText($event)'>Submit Text</button>
+</div>
+
+<!--source-to-view: attribute binding-->
+<h3>7. Source-to-view: attribute binding</h3>
+<div>
+  <img [src]="itemImageUrl" height="250px" />
+</div>
+
+<!--source-to-view: class binding-->
+<h3>8. Source-to-view: class binding</h3>
+<div [className]="hasError()? 'red' : 'green'">Class binding</div>
+
+<!--source-to-view: class binding-->
+<h3>9. Source-to-view: style binding</h3>
+<p [ngStyle]="myStyles">
+  Quite something!
+</p>
+
+<!--two-way binding-->
+<h3>10. Two-way binding</h3>
+<label id="twoWayBinding">
+  <p>{{message}}</p>
+  <input type="text" [(ngModel)]="message">
+</label>
+
+<!--html attribute vs dom property-->
+<h3>11. HTML attribute vs DOM property</h3>
+<label id="htmlAtt">
+  Enter your name:
+  <input type="text" value="Sarah">
+</label>
+
+<!--property binding-->
+<h3>12. Property binding</h3>
+<table>
+  <tr>
+    <th>Month</th><th>Savings</th>
+  </tr>
+  <tr>
+    <td>January</td><td>$100</td>
+  </tr>
+  <tr>
+    <td>February</td><td>$80</td>
+  </tr>
+  <tr>
+    <td [colSpan]="2">Sum: $180</td>
+  </tr>
+</table>
+
+<!--Return proper type: string-->
+<h3>13. Return proper type: string</h3>
+<app-item-detail [childItem]="parentItem"></app-item-detail>
+
+<!--Return proper type: object-->
+<h3>14. Return proper type: object</h3>
+<app-list-item [childItems]="parentItems"></app-list-item>
+
+<!--omit brackets-->
+<h3>15. Omit brackets</h3>
+<app-item-detail childItem="Passing a constant directly"></app-item-detail>
+
+<!--Content security-->
+<h3>16. Content security</h3>
+<p><span>"{{evilTitle}}" is the <i>interpolated</i> evil title.</span></p>
+
+<!--two-way binding-->
+<h3>17. ngClass</h3>
+<div [ngClass]="isSpecial ? 'special' : ''">This div is special</div>
+
+<!-- NgStyle -->
+<h3>18. ngStyle</h3>itemForm
+<div id="styleTest" [style.font-size]="isSpecial ? 'x-large' : 'smaller'">
+  This div is x-large or smaller.
+</div>
+
+<!--ngModel-->
+<h3>19. ngModel</h3>
+<div id="teaPot">
+  <p>Item name: {{itemName}}</p>
+  <label for="example-ngModel">[(ngModel)]:</label>
+  <input [(ngModel)]="itemName" id="example-ngModel">
+</div>
+
+<!--ngFor with index-->
+<h3>20. ngFor with index</h3>
+<ul *ngFor="let item of items; let i=index">
+  <li>{{i + 1}} - {{item}}</li>
+</ul>
+
+<!--ngSwitch-->
+<h3>21. ngSwitch</h3>
+<div *ngFor="let item of items" id="switchDemo">
+  <div [ngSwitch]="item">
+    <p *ngSwitchCase="'Car'" [style.color]="red">Red car</p>
+    <p *ngSwitchCase="'Boat'" [style.color]="blue">Blue Boat</p>
+    <p *ngSwitchDefault [style.color]="green">Green item</p>
+  </div>
+</div>
+
+<!--template reference variable-->
+<h3>22. Template reference variables</h3>
+<div id="tempRef">
+  <form #itemForm="ngForm" (ngSubmit)="onSubmit(itemForm)">
+    <label for="name">
+      Name: <input class="form-control" name="name" ngModel required />
+    </label>
+    <button type="submit">Submit</button>
+  </form>
+
+  <div [hidden]="!itemForm.form.valid">
+    <p>{{submitMessage}}</p>
+  </div>
+</div>
