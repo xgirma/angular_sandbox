@@ -9,7 +9,7 @@ jobs:
 
     strategy:
       matrix:
-        node-version: [8.x, 10.x, 12.x]
+        node-version: [12.x]
 
     steps:
     - uses: actions/checkout@v1
@@ -17,10 +17,17 @@ jobs:
       uses: actions/setup-node@v1
       with:
         node-version: ${{ matrix.node-version }}
-    - name: npm install, build, and test
+    - paths:
+      - ''
+    - name: fundamentals ~ f01-tour-of-heroes-app
       run: |
+        npm install -g @angular/cli
+        cd fundamentals/f01-tour-of-heroes-app
         npm ci
-        npm run build --if-present
-        npm test
+        npm npm run lint
+        npm run start &
+        npm test -- --watch false --browsers ChromeHeadless
+        npm run e2e:webdriver
+        npm run e2e:cd
       env:
         CI: true
