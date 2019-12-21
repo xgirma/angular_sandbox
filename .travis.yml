@@ -1,0 +1,18 @@
+language: node_js
+node_js:
+  - "10.16.3"
+addons:
+  chrome: stable
+branches:
+  only:
+    - master
+before_script:
+  - npm install -g @angular/cli
+script:
+# Fundamentals => tour of heroes app
+  - cd $TRAVIS_BUILD_DIR/fundamentals/f01-tour-of-heroes-app
+  - npm run lint
+  - npm run start &
+  - npm test -- --watch false --browsers ChromeHeadless
+  - npm run e2e:webdriver
+  - npm run e2e:cd
