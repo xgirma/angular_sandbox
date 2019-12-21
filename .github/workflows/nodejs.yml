@@ -17,8 +17,6 @@ jobs:
       uses: actions/setup-node@v1
       with:
         node-version: ${{ matrix.node-version }}
-    - paths:
-      - ''
     - name: fundamentals ~ f01-tour-of-heroes-app
       run: |
         npm install -g @angular/cli
