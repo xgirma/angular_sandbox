@@ -1,0 +1,36 @@
+<div id="one">
+  <h3>Get user input from the $event object</h3>
+  <input (keyup)="onKey($event)">
+  <p>{{values1}}</p>
+</div>
+<hr>
+
+<div id="two">
+  <h3>Type the $event</h3>
+  <input (keyup)="onKeyWithEventType($event)">
+  <p>{{values2}}</p>
+</div>
+<hr>
+
+<div id="three">
+  <h3>Get user input from a template reference variable</h3>
+  <input #box1 (keyup)="onKeyWithRefVariable(box1.value)">
+  <p>{{values3}}</p>
+</div>
+<hr>
+
+<div id="four">
+  <h3>Key event filtering (with key.enter)</h3>
+  <input #box2 (keyup.enter)="onEnter(box2.value)">
+  <p>{{values4}}</p>
+</div>
+<hr>
+
+<div id="five">
+  <h3>Key event filtering (with key.enter) and on blur</h3>
+  <input #box3
+         (keyup.enter)="onEnterWithBlur(box3.value)"
+         (blur)="onEnterWithBlur(box3.value)">
+  <p>{{values5}}</p>
+</div>
+<hr>
