@@ -7,6 +7,7 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class HeroChildComponent implements OnInit {
   @Input() hero;
+  // tslint:disable-next-line:no-input-rename
   @Input('master') masterName;
 
   constructor() { }
