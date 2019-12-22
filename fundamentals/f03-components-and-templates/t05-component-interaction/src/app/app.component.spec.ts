@@ -5,6 +5,8 @@ import { HeroChildComponent } from './hero-child/hero-child.component';
 import { HeroParentComponent } from './hero-parent/hero-parent.component';
 import { NameParentComponent } from './name-parent/name-parent.component';
 import { NameChildComponent } from './name-child/name-child.component';
+import { VersionParentComponent } from './version-parent/version-parent.component';
+import { VersionChildComponent } from './version-child/version-child.component';
 
 describe('AppComponent', () => {
   let component: AppComponent;
@@ -18,7 +20,9 @@ describe('AppComponent', () => {
         HeroChildComponent,
         HeroParentComponent,
         NameParentComponent,
-        NameChildComponent
+        NameChildComponent,
+        VersionParentComponent,
+        VersionChildComponent
       ],
     }).compileComponents();
   }));
@@ -41,5 +45,9 @@ describe('AppComponent', () => {
 
   it('should have name parent app', () => {
     expect(compiled.querySelector('app-name-parent')).toBeDefined();
+  });
+
+  it('should have version parent app', () => {
+    expect(compiled.querySelector('app-version-parent')).toBeDefined();
   });
 });

@@ -1,0 +1,6 @@
+<div>
+  <h2>Source code version</h2>
+  <button (click)="newMajor()" id="major">New major version</button>
+  <button (click)="newMinor()" id="minor">New minor version</button>
+  <app-version-child [major]="major" [minor]="minor"></app-version-child>
+</div>
