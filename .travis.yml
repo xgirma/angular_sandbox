@@ -29,3 +29,8 @@ script:
   - npm install
   - npm run lint
   - npm test -- --watch false --browsers ChromeHeadless
+  # Fundamentals => components and template => component interaction
+  - cd $TRAVIS_BUILD_DIR/fundamentals/f03-components-and-templates/t05-component-interaction
+  - npm install
+  - npm run lint
+  - npm test -- --watch false --browsers ChromeHeadless

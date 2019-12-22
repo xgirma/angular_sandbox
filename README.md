@@ -10,4 +10,5 @@ A sandbox for the official Angular documentation.
   * Displaying Data :heavy_check_mark:
   * Template Syntax :construction:
   * User Input :heavy_check_mark:
+  * Component Interaction :construction:
 4. Forms
