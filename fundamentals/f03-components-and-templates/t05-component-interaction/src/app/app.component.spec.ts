@@ -7,6 +7,8 @@ import { NameParentComponent } from './name-parent/name-parent.component';
 import { NameChildComponent } from './name-child/name-child.component';
 import { VersionParentComponent } from './version-parent/version-parent.component';
 import { VersionChildComponent } from './version-child/version-child.component';
+import { VoterTakerComponent } from './voter-taker/voter-taker.component';
+import { VoterComponent } from './voter/voter.component';
 
 describe('AppComponent', () => {
   let component: AppComponent;
@@ -22,7 +24,9 @@ describe('AppComponent', () => {
         NameParentComponent,
         NameChildComponent,
         VersionParentComponent,
-        VersionChildComponent
+        VersionChildComponent,
+        VoterTakerComponent,
+        VoterComponent
       ],
     }).compileComponents();
   }));
@@ -49,5 +53,9 @@ describe('AppComponent', () => {
 
   it('should have version parent app', () => {
     expect(compiled.querySelector('app-version-parent')).toBeDefined();
+  });
+
+  it('should have voter taker app', () => {
+    expect(compiled.querySelector('app-voter-taker')).toBeDefined();
   });
 });
