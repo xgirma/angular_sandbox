@@ -9,5 +9,5 @@ A sandbox for the official Angular documentation.
 3. Components & templates :construction:
   * Displaying Data :heavy_check_mark:
   * Template Syntax :construction:
-  * User Input :construction:
+  * User Input :heavy_check_mark:
 4. Forms

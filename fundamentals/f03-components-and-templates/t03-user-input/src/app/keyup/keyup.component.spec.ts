@@ -35,8 +35,8 @@ describe('KeyupComponent', () => {
 
     fixture.detectChanges();
     await fixture.whenStable();
+
     expect(component.onKey).toHaveBeenCalledTimes(2);
-    // expect(component.onKey).toHaveBeenCalledWith(); // TODO
     expect(compiled.querySelector('#one > p').textContent).toEqual('Foo | Bar | ');
   });
 
@@ -51,7 +51,6 @@ describe('KeyupComponent', () => {
     fixture.detectChanges();
     await fixture.whenStable();
     expect(component.onKeyWithEventType).toHaveBeenCalledTimes(2);
-    // expect(component.onKeyWithEventType).toHaveBeenCalledWith(); // TODO
     expect(compiled.querySelector('#two > p').textContent).toEqual('Bar | Foo | ');
   });
 
@@ -65,8 +64,8 @@ describe('KeyupComponent', () => {
 
     fixture.detectChanges();
     await fixture.whenStable();
+
     expect(component.onKeyWithRefVariable).toHaveBeenCalledTimes(2);
-    // expect(component.onKeyWithRefVariable).toHaveBeenCalledWith('Bob' , 'Pop'); // TODO
     expect(compiled.querySelector('#three > p').textContent).toEqual('Bob | Pop | ');
   });
 
@@ -79,12 +78,23 @@ describe('KeyupComponent', () => {
 
     fixture.detectChanges();
     await fixture.whenStable();
+
     expect(component.onEnter).toHaveBeenCalledTimes(1);
     expect(component.onEnter).toHaveBeenCalledWith('Bob');
     expect(compiled.querySelector('#four > p').textContent).toEqual('Bob');
   });
 
-  it('should get input with key event filtering and blur', () => {
-    // TODO
+  it('should get input with key event filtering and blur', async () => {
+    spyOn(component, 'onEnterWithBlur').and.callThrough();
+    const inputBox = compiled.querySelector('#five > input');
+    inputBox.value = 'Pop';
+
+    inputBox.dispatchEvent(new Event('blur'));
+    fixture.detectChanges();
+
+    await fixture.whenStable();
+    expect(component.onEnterWithBlur).toHaveBeenCalledTimes(1);
+    expect(component.onEnterWithBlur).toHaveBeenCalledWith('Pop');
+    expect(compiled.querySelector('#five > p').textContent).toEqual('Pop');
   });
 });

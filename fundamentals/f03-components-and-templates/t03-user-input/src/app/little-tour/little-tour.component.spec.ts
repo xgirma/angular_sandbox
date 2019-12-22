@@ -31,6 +31,7 @@ describe('LittleTourComponent', () => {
     const button = compiled.querySelector('button');
     const inputBox = compiled.querySelector('input');
     const heroes = fixture.debugElement.queryAll(By.css('li'));
+
     expect(heroes.length).toEqual(4);
     inputBox.value = 'Foo Bar';
     button.dispatchEvent(new Event('click'));
@@ -39,6 +40,7 @@ describe('LittleTourComponent', () => {
     await fixture.whenStable();
 
     const heroesNow = fixture.debugElement.queryAll(By.css('li'));
+
     expect(component.addHero).toHaveBeenCalledTimes(1);
     expect(heroesNow.length).toEqual(5);
     expect(heroesNow[4].nativeElement.textContent).toEqual('Foo Bar');
@@ -67,8 +69,19 @@ describe('LittleTourComponent', () => {
     spyOn(component, 'addHero').and.callThrough();
     const inputBox = compiled.querySelector('input');
     const heroes = fixture.debugElement.queryAll(By.css('li'));
-    const event = new KeyboardEvent('keyup', {key: 'Enter'});
 
-    // TODO
+    inputBox.value = 'Pop Soo';
+    expect(heroes.length).toEqual(4);
+
+    inputBox.dispatchEvent(new Event('blur'));
+
+    fixture.detectChanges();
+    await fixture.whenStable();
+
+    const heroesNow = fixture.debugElement.queryAll(By.css('li'));
+
+    expect(component.addHero).toHaveBeenCalledTimes(1);
+    expect(heroesNow.length).toEqual(5);
+    expect(heroesNow[4].nativeElement.textContent).toEqual('Pop Soo');
   });
 });
