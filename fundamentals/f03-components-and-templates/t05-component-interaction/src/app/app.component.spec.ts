@@ -3,6 +3,8 @@ import {TestBed, async, ComponentFixture} from '@angular/core/testing';
 import { AppComponent } from './app.component';
 import { HeroChildComponent } from './hero-child/hero-child.component';
 import { HeroParentComponent } from './hero-parent/hero-parent.component';
+import { NameParentComponent } from './name-parent/name-parent.component';
+import { NameChildComponent } from './name-child/name-child.component';
 
 describe('AppComponent', () => {
   let component: AppComponent;
@@ -14,7 +16,9 @@ describe('AppComponent', () => {
       declarations: [
         AppComponent,
         HeroChildComponent,
-        HeroParentComponent
+        HeroParentComponent,
+        NameParentComponent,
+        NameChildComponent
       ],
     }).compileComponents();
   }));
@@ -33,5 +37,9 @@ describe('AppComponent', () => {
 
   it('should have parent app', () => {
     expect(compiled.querySelector('app-hero-parent')).toBeDefined();
+  });
+
+  it('should have name parent app', () => {
+    expect(compiled.querySelector('app-name-parent')).toBeDefined();
   });
 });
