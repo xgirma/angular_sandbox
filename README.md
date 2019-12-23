@@ -10,5 +10,12 @@ A sandbox for the official Angular documentation.
   * Displaying Data :heavy_check_mark:
   * Template Syntax :construction:
   * User Input :heavy_check_mark:
+  * Lifecycle Hooks :construction:
   * Component Interaction :construction:
-4. Forms
+  * Component Style :construction:
+  * Dynamic Components :construction:
+  * Angular Elements :construction:
+  * Attribute Directives :construction:
+  * Structural Directives :construction:
+  * Pipes :construction:
+4. Forms :construction:
