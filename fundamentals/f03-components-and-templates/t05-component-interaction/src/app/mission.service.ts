@@ -14,7 +14,7 @@ export class MissionService {
 
   // Observable string stream
   missionAnnounced$ = this.missionAnnouncedSource.asObservable();
-  missionConfirms$ = this.missionConfirmSource.asObservable();
+  missionConfirmed$ = this.missionConfirmSource.asObservable();
 
   // Service message commands
   announceMission(mission: string) {
