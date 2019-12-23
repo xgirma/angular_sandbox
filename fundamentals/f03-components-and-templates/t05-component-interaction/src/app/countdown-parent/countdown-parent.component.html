@@ -1,0 +1,7 @@
+<div>
+  <h3>Countdown to Liftoff (via local variable)</h3>
+  <button id="start" (click)="timer.start()">Start</button>
+  <button id="end" (click)="timer.stop()">End</button>
+  <div calss="seconds">{{timer.seconds}}</div>
+  <app-countdown-timer #timer></app-countdown-timer>
+</div>

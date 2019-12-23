@@ -9,6 +9,11 @@ import { VersionParentComponent } from './version-parent/version-parent.componen
 import { VersionChildComponent } from './version-child/version-child.component';
 import { VoterTakerComponent } from './voter-taker/voter-taker.component';
 import { VoterComponent } from './voter/voter.component';
+import { CountdownParentComponent } from './countdown-parent/countdown-parent.component';
+import { CountdownTimerComponent } from './countdown-timer/countdown-timer.component';
+import { CountdownViewChildParentComponent } from './countdown-view-child-parent/countdown-view-child-parent.component';
+import { MissionControlComponent } from './mission-control/mission-control.component';
+import { AstronautComponent } from './astronaut/astronaut.component';
 
 describe('AppComponent', () => {
   let component: AppComponent;
@@ -26,7 +31,12 @@ describe('AppComponent', () => {
         VersionParentComponent,
         VersionChildComponent,
         VoterTakerComponent,
-        VoterComponent
+        VoterComponent,
+        CountdownParentComponent,
+        CountdownTimerComponent,
+        CountdownViewChildParentComponent,
+        MissionControlComponent,
+        AstronautComponent
       ],
     }).compileComponents();
   }));
