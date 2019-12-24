@@ -21,6 +21,7 @@
 <div id="four">
   <h3>Bind to an @Input alias</h3>
   <p [appHighlightAlias]="color">Highlight me!</p>
+  <p [appHighlightAlias] defaultColor="blue">Highlight me!</p>
   <p [appHighlightAlias]>Highlight me!</p>
 </div>
 <hr>
@@ -29,9 +30,9 @@
   <h3>Harness</h3>
   <h4>Pick a highlight color</h4>
   <div>
-    <input type="radio" name="color" (click)="color='lightgreen'">Green
-    <input type="radio" name="color" (click)="color='yellow'">Yellow
-    <input type="radio" name="color" (click)="color='cyan'">Cyan
+    <input type="radio" name="color" (click)="color='lightgreen'" id="lightgreen">Green
+    <input type="radio" name="color" (click)="color='yellow'" id="yellow">Yellow
+    <input type="radio" name="color" (click)="color='cyan'" id="cyan">Cyan
   </div>
   <p [appHighlightAlias]="color" defaultColor="violet">Highlight me !</p>
   <p [appHighlightAlias] defaultColor="violet">Highlight me !</p>

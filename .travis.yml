@@ -34,3 +34,8 @@ script:
   - npm install
   - npm run lint
   - npm test -- --watch false --browsers ChromeHeadless
+  # Fundamentals => components and template => attribute directives
+  - cd $TRAVIS_BUILD_DIR/fundamentals/f03-components-and-templates/t09-attribute-directives
+  - npm install
+  - npm run lint
+  - npm test -- --watch false --browsers ChromeHeadless

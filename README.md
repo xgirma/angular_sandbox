@@ -15,7 +15,7 @@ A sandbox for the official Angular documentation.
   * Component Style :construction:
   * Dynamic Components :construction:
   * Angular Elements :construction:
-  * Attribute Directives :construction:
+  * Attribute Directives :heavy_check_mark:
   * Structural Directives :construction:
   * Pipes :construction:
 4. Forms :construction:
