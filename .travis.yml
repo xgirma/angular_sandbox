@@ -8,34 +8,29 @@ branches:
     - master
 before_script:
   - npm install -g @angular/cli
+  - npm install
 script:
 # Fundamentals => tour of heroes app
   - cd $TRAVIS_BUILD_DIR/fundamentals/f01-tour-of-heroes-app
-  - npm install
   - npm run lint
   - npm test -- --watch false --browsers ChromeHeadless
 # Fundamentals => components and template => displaying data
   - cd $TRAVIS_BUILD_DIR/fundamentals/f03-components-and-templates/t01-displaying-data
-  - npm install
   - npm run lint
   - npm test -- --watch false --browsers ChromeHeadless
   # Fundamentals => components and template => template syntax
   - cd $TRAVIS_BUILD_DIR/fundamentals/f03-components-and-templates/t02-template-syntax
-  - npm install
   - npm run lint
   - npm test -- --watch false --browsers ChromeHeadless
   # Fundamentals => components and template => user input
   - cd $TRAVIS_BUILD_DIR/fundamentals/f03-components-and-templates/t03-user-input
-  - npm install
   - npm run lint
   - npm test -- --watch false --browsers ChromeHeadless
   # Fundamentals => components and template => component interaction
   - cd $TRAVIS_BUILD_DIR/fundamentals/f03-components-and-templates/t05-component-interaction
-  - npm install
   - npm run lint
   - npm test -- --watch false --browsers ChromeHeadless
   # Fundamentals => components and template => attribute directives
   - cd $TRAVIS_BUILD_DIR/fundamentals/f03-components-and-templates/t09-attribute-directives
-  - npm install
   - npm run lint
   - npm test -- --watch false --browsers ChromeHeadless
