@@ -7,4 +7,5 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 't09-attribute-directives';
+  color = 'cyan';
 }
