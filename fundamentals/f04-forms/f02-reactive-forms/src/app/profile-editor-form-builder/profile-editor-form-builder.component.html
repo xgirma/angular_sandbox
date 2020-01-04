@@ -36,6 +36,17 @@
       <input type="text" formControlName="zip">
     </label>
   </div>
+
+  <div formArrayName="aliases" id="alias">
+    <h4>Aliases</h4>
+    <button (click)="addAlias()">Add Alias</button>
+    <div *ngFor="let address of aliases.controls; let i=index">
+      <label>
+        Alias:
+        <input type="text" [formControlName]="i">
+      </label>
+    </div>
+  </div>
 </form>
 
 <p id="formValue">

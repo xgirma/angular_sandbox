@@ -10,11 +10,15 @@ before_script:
   - npm install -g @angular/cli
   - npm install
 script:
-# Fundamentals => tour of heroes app
+  #################################################
+  # FUNDAMENTALS #
+  #################################################
+  # Fundamentals => tour of heroes app
   - cd $TRAVIS_BUILD_DIR/fundamentals/f01-tour-of-heroes-app
   - npm run lint
   - npm test -- --watch false --browsers ChromeHeadless
-# Fundamentals => components and template => displaying data
+  ## COMPONENTS and TEMPLATE
+  # Fundamentals => components and template => displaying data
   - cd $TRAVIS_BUILD_DIR/fundamentals/f03-components-and-templates/t01-displaying-data
   - npm run lint
   - npm test -- --watch false --browsers ChromeHeadless
@@ -34,11 +38,16 @@ script:
   - cd $TRAVIS_BUILD_DIR/fundamentals/f03-components-and-templates/t09-attribute-directives
   - npm run lint
   - npm test -- --watch false --browsers ChromeHeadless
+  ## FORMS ##
   # Fundamentals => forms => intro
   - cd $TRAVIS_BUILD_DIR/fundamentals/f04-forms/f01-intro
   - npm run lint
   - npm test -- --watch false --browsers ChromeHeadless
   # Fundamentals => forms => reactive forms
   - cd $TRAVIS_BUILD_DIR/fundamentals/f04-forms/f02-reactive-forms
+  - npm run lint
+  - npm test -- --watch false --browsers ChromeHeadless
+  # Fundamentals => forms => template-driven forms
+  - cd $TRAVIS_BUILD_DIR/fundamentals/f04-forms/f03-template-driven-forms
   - npm run lint
   - npm test -- --watch false --browsers ChromeHeadless
