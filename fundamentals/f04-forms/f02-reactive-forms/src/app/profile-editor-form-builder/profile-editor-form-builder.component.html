@@ -1,9 +1,9 @@
-<h3>03. Grouping form controls</h3>
+<h3>03. Form builder</h3>
 
 <form [formGroup]="profileForm" (ngSubmit)="onSubmit()">
   <label id="firstName">
     First Name:
-    <input type="text" formControlName="firstName">
+    <input type="text" formControlName="firstName" required>
   </label>
 
   <label id="lastName">
@@ -43,8 +43,9 @@
   <span>{{ profileForm.value | json }}</span>
 </p>
 
-
-<p>Form Status: {{ profileForm.status }}</p>
+<div id="formStatus">
+  <p>Form Status: {{ profileForm.status }}</p>
+</div>
 
 <p id="updateProfile">
   <button (click)="updateProfile()">Update Profile</button>

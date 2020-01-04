@@ -58,3 +58,7 @@ export class ProfileEditorFormBuilderComponent implements OnInit {
   constructor(private fb: FormBuilder) { }
 
 ```
+
+    import { Validators } from '@angular/forms';
+    
+...

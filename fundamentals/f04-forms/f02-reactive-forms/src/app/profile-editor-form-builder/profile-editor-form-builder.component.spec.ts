@@ -69,6 +69,25 @@ describe('ProfileEditorFormBuilderComponent', () => {
     const formValueAfterUpdate = JSON.parse(valueAfterUpdate.textContent);
     expect(formValueAfterUpdate).toEqual(jasmine.objectContaining(mixed));
   });
+
+  it('first-name is required', async () => {
+    const submitButton = fixture.nativeElement.querySelector('form > button');
+    expect(submitButton.disabled).toBeTruthy();
+    const formStatus = fixture.nativeElement.querySelector('#formStatus > p');
+    expect(formStatus.textContent).toContain('INVALID');
+
+    const firstName = fixture.nativeElement.querySelector('#firstName > input');
+    firstName.value = 'Foo';
+    firstName.dispatchEvent(new Event('input'));
+
+    fixture.detectChanges();
+    await fixture.whenStable();
+
+    const submitButtonAfter = fixture.nativeElement.querySelector('form > button');
+    expect(submitButtonAfter.disabled).toBeFalsy();
+    const formStatusAfter = fixture.nativeElement.querySelector('#formStatus > p');
+    expect(formStatusAfter.textContent).toContain('VALID');
+  });
 });
 
 async function commonTest(fixture) {
