@@ -34,7 +34,6 @@ script:
   - cd $TRAVIS_BUILD_DIR/fundamentals/f03-components-and-templates/t09-attribute-directives
   - npm run lint
   - npm test -- --watch false --browsers ChromeHeadless
-
   # Fundamentals => forms => intro
   - cd $TRAVIS_BUILD_DIR/fundamentals/f04-forms/f01-intro
   - npm run lint
