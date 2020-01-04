@@ -1,0 +1,50 @@
+<div class="container">
+  <h4>Hero Form</h4>
+
+  <form (ngSubmit)="onSubmit()" #heroForm="ngForm">
+    <div>
+      <label for="name">Name: </label>
+      <input type="text"
+             id="name"
+             required
+             [(ngModel)]="model.name"
+             name="name"
+             #spy
+             #name="ngModel">
+    </div>
+
+    <div>
+      <label for="alterEgo">Alter Ego: </label>
+      <input type="text"
+             id="alterEgo"
+             [(ngModel)]="model.alterEgo"
+             name="alterEgo">
+    </div>
+
+    <div>
+      <label for="power">Hero Power: </label>
+      <select id="power"
+              required
+              [(ngModel)]="model.power"
+              name="power">
+        <option *ngFor="let power of powers" [value]="power">
+          {{power}}
+        </option>
+      </select>
+    </div>
+
+    <button type="submit"
+            [disabled]="!heroForm.form.valid"
+            id="submit">
+      Submit
+    </button>
+  </form>
+
+  <hr>
+
+  <div id="diagnostic">{{diagnostic}}</div>
+  <div id="error" [hidden]="name.valid || name.pristine">
+    Name is required
+  </div>
+  <div id="stateName">{{(spy.className).split(' | ')}}</div>
+</div>

@@ -1,27 +1,22 @@
-# F03TemplateDrivenForms
+# Template DrivenForms
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.3.6.
+    Use ngModel to create two-way data bindings for reading and writing input-control values.
 
-## Development server
+    Track state changes and the validity of form controls.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+    Provide visual feedback using special CSS classes that track the state of the controls.
 
-## Code scaffolding
+    Display validation errors to users and enable/disable form controls.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+    Share information across HTML elements using template reference variables.
 
-## Build
+The NgModel directive doesn't just track state; it updates the control with special Angular CSS classes that reflect the state. 
+You can leverage those class names to change the appearance of the control.
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+| state| true| false|
+|---|---|---|
+| control visited | ng-touched | ng-untouched |
+| value changed | ng-dirty | ng-pristine |
+| value valid | ng-valid | ng-invalid |
 
-## Running unit tests
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
