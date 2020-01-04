@@ -1,0 +1,14 @@
+<div id="rf01">
+  <h3> Reactive Form</h3>
+  Favourite color: <input type="text" [formControl]="favoriteColorControl">
+  <div>{{favoriteColorControl.value}}</div>
+</div>
+
+<hr>
+
+<div id="tf01">
+  <h3>Template-driven Form</h3>
+  Favourite color: <input type="text" [(ngModel)]="favoriteColor">
+  <div>{{favoriteColor}}</div>
+</div>
+
