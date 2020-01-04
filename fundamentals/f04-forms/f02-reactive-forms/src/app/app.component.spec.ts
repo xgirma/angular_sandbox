@@ -3,6 +3,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { NameEditorComponent } from './name-editor/name-editor.component';
+import { ProfileEditorComponent } from './profile-editor/profile-editor.component';
 
 describe('AppComponent', () => {
   let component: AppComponent;
@@ -13,7 +14,8 @@ describe('AppComponent', () => {
     TestBed.configureTestingModule({
       declarations: [
         AppComponent,
-        NameEditorComponent
+        NameEditorComponent,
+        ProfileEditorComponent
       ],
       imports: [ ReactiveFormsModule ]
     }).compileComponents();

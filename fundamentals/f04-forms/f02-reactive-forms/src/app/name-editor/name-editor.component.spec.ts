@@ -6,7 +6,6 @@ import { NameEditorComponent } from './name-editor.component';
 describe('NameEditorComponent', () => {
   let component: NameEditorComponent;
   let fixture: ComponentFixture<NameEditorComponent>;
-  let compiled: any;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
