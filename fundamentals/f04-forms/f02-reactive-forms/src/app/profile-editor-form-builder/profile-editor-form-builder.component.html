@@ -1,0 +1,51 @@
+<h3>03. Grouping form controls</h3>
+
+<form [formGroup]="profileForm" (ngSubmit)="onSubmit()">
+  <label id="firstName">
+    First Name:
+    <input type="text" formControlName="firstName">
+  </label>
+
+  <label id="lastName">
+    Last Name:
+    <input type="text" formControlName="lastName">
+  </label>
+
+  <button type="submit" [disabled]="!profileForm.valid">Submit</button>
+
+  <div formGroupName="address">
+    <h4>Address:</h4>
+
+    <label id="street">
+      Street:
+      <input type="text" formControlName="street">
+    </label>
+
+    <label id="city">
+      City:
+      <input type="text" formControlName="city">
+    </label>
+
+    <label id="state">
+      State:
+      <input type="text" formControlName="state">
+    </label>
+
+    <label id="zip">
+      Zip Code:
+      <input type="text" formControlName="zip">
+    </label>
+  </div>
+</form>
+
+<p id="formValue">
+  Form Value:
+  <span>{{ profileForm.value | json }}</span>
+</p>
+
+
+<p>Form Status: {{ profileForm.status }}</p>
+
+<p id="updateProfile">
+  <button (click)="updateProfile()">Update Profile</button>
+</p>

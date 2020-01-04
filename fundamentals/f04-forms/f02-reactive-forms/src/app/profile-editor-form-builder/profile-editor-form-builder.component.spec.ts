@@ -1,7 +1,7 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { ReactiveFormsModule } from '@angular/forms';
 
-import { ProfileEditorComponent } from './profile-editor.component';
+import { ProfileEditorFormBuilderComponent } from './profile-editor-form-builder.component';
 
 const formValueExpected = { firstName: 'Foo', lastName: 'Bar',
   address: { street: '123 Durham Bulls', city: 'Durham', state: 'NC', zip: '27707' } };
@@ -10,20 +10,20 @@ const patchValueExpected = { firstName: 'Nancy', lastName: '',
 const mixed = { firstName: 'Nancy', lastName: 'Bar',
   address: { street: '123 Drew Street', city: 'Durham', state: 'NC', zip: '27707' } };
 
-describe('ProfileEditorComponent', () => {
-  let component: ProfileEditorComponent;
-  let fixture: ComponentFixture<ProfileEditorComponent>;
+describe('ProfileEditorFormBuilderComponent', () => {
+  let component: ProfileEditorFormBuilderComponent;
+  let fixture: ComponentFixture<ProfileEditorFormBuilderComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ ProfileEditorComponent ],
+      declarations: [ ProfileEditorFormBuilderComponent ],
       imports: [ ReactiveFormsModule ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(ProfileEditorComponent);
+    fixture = TestBed.createComponent(ProfileEditorFormBuilderComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
@@ -99,3 +99,4 @@ async function commonTest(fixture) {
   fixture.detectChanges();
   await fixture.whenStable();
 }
+
