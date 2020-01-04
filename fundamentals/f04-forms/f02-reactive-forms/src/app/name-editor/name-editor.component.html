@@ -1,0 +1,16 @@
+<h3>01. Getting started</h3>
+<div>
+  <label>
+    Name:
+    <input type="text" [formControl]="name">
+  </label>
+
+  <p id="getName">
+    Value: {{ name.value }}
+  </p>
+
+  <h3>02. Managing control values</h3>
+  <p>
+    <button (click)="updateName()">Update Name</button>
+  </p>
+</div>

@@ -38,3 +38,7 @@ script:
   - cd $TRAVIS_BUILD_DIR/fundamentals/f04-forms/f01-intro
   - npm run lint
   - npm test -- --watch false --browsers ChromeHeadless
+  # Fundamentals => forms => reactive forms
+  - cd $TRAVIS_BUILD_DIR/fundamentals/f04-forms/f02-reactive-forms
+  - npm run lint
+  - npm test -- --watch false --browsers ChromeHeadless
