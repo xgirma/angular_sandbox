@@ -19,4 +19,8 @@ You can leverage those class names to change the appearance of the control.
 | value changed | ng-dirty | ng-pristine |
 | value valid | ng-valid | ng-invalid |
 
+## Resources
+
+[Unit testing ngModel in Angular 4](https://shekhargulati.com/2017/07/13/unit-testing-ngmodel-in-angular-4/)
+
 
