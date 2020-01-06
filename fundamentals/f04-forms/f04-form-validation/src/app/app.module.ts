@@ -7,6 +7,7 @@ import { TemplateDrivenComponent } from './template-driven/template-driven.compo
 import { ForbiddenValidatorDirective } from './shared/forbidden-name.directive';
 import { UniqueAlterEgoValidatorDirective } from './shared/alter-ego.directive';
 import { IdentityRevealedValidatorDirective } from './shared/identity-revealed.directive';
+import { ReactiveComponent } from './reactive/reactive.component';
 
 @NgModule({
   declarations: [
@@ -14,7 +15,8 @@ import { IdentityRevealedValidatorDirective } from './shared/identity-revealed.d
     TemplateDrivenComponent,
     ForbiddenValidatorDirective,
     UniqueAlterEgoValidatorDirective,
-    IdentityRevealedValidatorDirective
+    IdentityRevealedValidatorDirective,
+    ReactiveComponent
   ],
   imports: [
     BrowserModule,

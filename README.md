@@ -22,3 +22,4 @@ A sandbox for the official Angular documentation.
     * Introduction: :heavy_check_mark:
     * Reactive Forms: :heavy_check_mark:
     * Template-driven forms :construction:
+    * Form validation :construction:
