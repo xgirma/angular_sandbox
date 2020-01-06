@@ -4,7 +4,6 @@ import { By } from '@angular/platform-browser';
 
 import { TemplateDrivenComponent } from './template-driven.component';
 
-
 describe('TemplateDrivenComponent', () => {
   let component: TemplateDrivenComponent;
   let fixture: ComponentFixture<TemplateDrivenComponent>;
@@ -20,7 +19,7 @@ describe('TemplateDrivenComponent', () => {
     .compileComponents();
   }));
 
-  beforeEach(() => {
+  beforeEach(async () => {
     fixture = TestBed.createComponent(TemplateDrivenComponent);
     component = fixture.componentInstance;
     const formElement = fixture.debugElement.query(By.css('form'));
@@ -35,6 +34,7 @@ describe('TemplateDrivenComponent', () => {
     expect(component.powers).toBeTruthy();
   });
 
+  // TODO use fakeAsync
   it('should submit with valid name', async () => {
     const name = 'Mr. Boos';
     fixture.componentInstance.hero.name = name;
@@ -55,36 +55,133 @@ describe('TemplateDrivenComponent', () => {
     expect(addBtn).toBeDefined();
   });
 
-  it('should have name length > 4 character', async () => {
-    fixture.componentInstance.hero.name = 'Foo';
-    fixture.detectChanges();
+  it('Name must be at least 4 characters long.', fakeAsync( () => {
+    const name = fixture.debugElement.query(By.css('#name')).nativeElement;
+    name.value = 'bob';
+    name.dispatchEvent(new Event('input'));
+    tick();
 
     expect(form.submitted).toBeFalsy();
     fixture.whenStable().then(() => {
       fixture.detectChanges();
       const submit = fixture.debugElement.query(By.css('#submitBtn')).nativeElement;
+      const reset = fixture.debugElement.query(By.css('#resetBtn')).nativeElement;
       expect(submit.disabled).toBeTruthy();
+      expect(reset.disabled).toBeFalsy();
 
       const control = form.control.get('name');
       expect(control.hasError('minlength')).toBe(true);
-    });
-  });
 
-  it('should have name', async () => {
-    fixture.componentInstance.hero.name = '';
-    fixture.detectChanges();
+      const lengthError = compiled.querySelector('#name-length-error');
+      expect(lengthError.textContent).toEqual('Name must be at least 4 characters long.');
+    });
+  }));
+
+  // TODO test custom validator
+  xit('Name cannot be Bob', fakeAsync(() => {
+    const name = fixture.debugElement.query(By.css('#name')).nativeElement;
+    name.value = 'bob';
+    name.dispatchEvent(new Event('input'));
+    tick();
+
+    expect(form.submitted).toBeFalsy();
+    fixture.whenStable().then(() => {
+      fixture.detectChanges();
+
+      const submit = fixture.debugElement.query(By.css('#submitBtn')).nativeElement;
+      expect(submit.disabled).toBeTruthy();
+      const control = form.control.get('name');
+      expect(control.hasError('minlength')).toBeTruthy();
+      expect(control.hasError('forbiddenName')).toBeTruthy(); // error
+    });
+  }));
+
+  it('Name is required', fakeAsync(() => {
+    const nameInput = fixture.debugElement.query(By.css('#name')).nativeElement;
+    nameInput.value = '';
+    nameInput.dispatchEvent(new Event('input'));
+    tick();
 
     expect(form.submitted).toBeFalsy();
     fixture.whenStable().then(() => {
       fixture.detectChanges();
       const submit = fixture.debugElement.query(By.css('#submitBtn')).nativeElement;
+      const reset = fixture.debugElement.query(By.css('#resetBtn')).nativeElement;
       expect(submit.disabled).toBeTruthy();
+      expect(reset.disabled).toBeFalsy();
 
       const control = form.control.get('name');
       expect(control.hasError('required')).toBe(true);
-    });
-  });
 
-  // TODO
-  xit('should reset', () => {});
+      const error = fixture.debugElement.query(By.css('#name-required-error')).nativeElement;
+      expect(error.textContent).toEqual('Name is required.');
+    });
+  }));
+
+  it('should reset', fakeAsync(() => {
+    const reset = fixture.debugElement.query(By.css('#resetBtn')).nativeElement;
+    reset.dispatchEvent(new Event('click'));
+    tick();
+
+    expect(form.submitted).toBeFalsy();
+    fixture.whenStable().then(() => {
+      const submit = fixture.debugElement.query(By.css('#submitBtn')).nativeElement;
+      expect(submit.disabled).toBeFalsy();
+      expect(reset.disabled).toBeFalsy();
+
+      const nameInput = fixture.debugElement.query(By.css('#name')).nativeElement;
+      const alterEgoInput = fixture.debugElement.query(By.css('#alterEgo')).nativeElement;
+      expect(nameInput.textContent).toEqual('');
+      expect(alterEgoInput.textContent).toEqual('');
+
+      // TODO add for dropdown
+    });
+  }));
+
+  // TODO fix
+  xit('Alter ego is already taken', fakeAsync( () => {
+    const alterEgo = fixture.debugElement.query(By.css('#alterEgo')).nativeElement;
+    alterEgo.value = 'Eric';
+    alterEgo.dispatchEvent(new Event('blur'));
+    tick();
+
+    expect(form.submitted).toBeFalsy();
+    fixture.whenStable().then(() => {
+      fixture.detectChanges();
+      const submit = fixture.debugElement.query(By.css('#submitBtn')).nativeElement;
+      const reset = fixture.debugElement.query(By.css('#resetBtn')).nativeElement;
+      expect(submit.disabled).toBeFalsy();
+      expect(reset.disabled).toBeFalsy();
+
+      const control = form.control.get('alterEgo');
+      expect(control.hasError('uniqueAlterEgo')).toBe(true);
+
+      // const alterEgoError = compiled.querySelector('.alter-ego-errors > div');
+      // expect(alterEgoError.textContent).toEqual('Alter ego is already taken.');
+    });
+  }));
+
+  // TODO fix
+  xit('Name cannot match alter ego.', fakeAsync(() => {
+    const nameInput = fixture.debugElement.query(By.css('#name')).nativeElement;
+    const alterEgoInput = fixture.debugElement.query(By.css('#alterEgo')).nativeElement;
+    nameInput.value = 'Sofia';
+    nameInput.dispatchEvent(new Event('input'));
+    alterEgoInput.value = 'Sofia';
+    alterEgoInput.dispatchEvent(new Event('input'));
+
+    tick();
+
+    expect(form.submitted).toBeFalsy();
+    fixture.whenStable().then(() => {
+      fixture.detectChanges();
+      const submit = fixture.debugElement.query(By.css('#submitBtn')).nativeElement;
+      const reset = fixture.debugElement.query(By.css('#resetBtn')).nativeElement;
+      expect(submit.disabled).toBeTruthy();
+      expect(reset.disabled).toBeFalsy();
+    });
+  }));
+
+  // TODO fix, issue: error will never happen
+  xit('Power is required.', fakeAsync(() => {}));
 });
