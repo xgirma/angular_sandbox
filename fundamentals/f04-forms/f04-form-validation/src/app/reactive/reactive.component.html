@@ -15,13 +15,10 @@
 
         <div class="form-group">
           <label for="alterEgo">Alter Ego</label>
-          <input id="alterEgo" class="form-control"
-                 formControlName="alterEgo"  >
+          <input id="alterEgo" class="form-control" formControlName="alterEgo"  >
           <div *ngIf="alterEgo.pending">Validating...</div>
           <div *ngIf="alterEgo.invalid" class="alert alert-danger alter-ego-errors">
-            <div *ngIf="alterEgo.errors?.uniqueAlterEgo">
-              Alter ego is already taken.
-            </div>
+            <div *ngIf="alterEgo.errors?.uniqueAlterEgo">Alter ego is already taken.</div>
           </div>
         </div>
 

@@ -133,4 +133,31 @@ describe('ReactiveComponent', () => {
     const errorBob = fixture.debugElement.query(By.css('#no-bob')).nativeElement;
     expect(errorBob.textContent).toEqual('Name cannot be Bob.');
   });
+
+  // TODO fix
+  xit('Alter ego is already taken', async () => {
+    const name = fixture.debugElement.query(By.css('#name')).nativeElement;
+    name.value = 'Sofya';
+    name.dispatchEvent(new Event('input'));
+
+    const alterEgo = fixture.debugElement.query(By.css('#alterEgo')).nativeElement;
+    alterEgo.value = 'Sofya';
+    alterEgo.dispatchEvent(new Event('blur'));
+
+    fixture.detectChanges();
+    await fixture.whenStable();
+  });
+
+  // TODO fix
+  xit('Name cannot match alter ego', async () => {
+    const alterEgo = fixture.debugElement.query(By.css('#alterEgo')).nativeElement;
+    alterEgo.value = 'Eric';
+    alterEgo.dispatchEvent(new Event('blur'));
+
+    fixture.detectChanges();
+    await fixture.whenStable();
+  });
+
+  // TODO fix, issue: error will never happen
+  xit('Power is required.', () => {});
 });
