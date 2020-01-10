@@ -1,4 +1,4 @@
-import {MasterService, ValueService} from './demo';
+import {LightswitchComponent, MasterService, ValueService} from './demo';
 
 export class FakeValueService extends ValueService {
   value = 'faked service value';
@@ -91,5 +91,23 @@ describe('MasterService without beforeEach', () => {
     expect(masterService.getValue()).toBe(stubValue, 'service returned stub value');
     expect(valueServiceSpy.getValue.calls.count()).toBe(1, 'spy method was called once');
     expect(valueServiceSpy.getValue.calls.mostRecent().returnValue).toBe(stubValue, '');
+  });
+});
+
+describe('LightSwitchComp', () => {
+  it('#clicked() should toggle #isOn', () => {
+    const component = new LightswitchComponent();
+    expect(component.isOn).toBe(false, 'off at first');
+    component.clicked();
+    expect(component.isOn).toBe(true, 'on after click');
+    component.clicked();
+    expect(component.isOn).toBe(false, 'off after second click');
+  });
+
+  it('#clicked() should set #message to "is on"', () => {
+    const component = new LightswitchComponent();
+    expect(component.message).toMatch(/is off/i, 'off at first');
+    component.clicked();
+    expect(component.message).toMatch(/is on/i, 'on after clicked');
   });
 });
