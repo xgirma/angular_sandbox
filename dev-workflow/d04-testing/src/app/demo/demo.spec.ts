@@ -90,6 +90,6 @@ describe('MasterService without beforeEach', () => {
 
     expect(masterService.getValue()).toBe(stubValue, 'service returned stub value');
     expect(valueServiceSpy.getValue.calls.count()).toBe(1, 'spy method was called once');
-    expect(valueServiceSpy.getValue.calls.mostRecent()).toBe(stubValue, '');
+    expect(valueServiceSpy.getValue.calls.mostRecent().returnValue).toBe(stubValue, '');
   });
 });
