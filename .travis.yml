@@ -46,3 +46,7 @@ script:
   - cd $TRAVIS_BUILD_DIR/fundamentals/f04-forms/f03-template-driven-forms
   - npm run lint
   - npm test -- --watch false --browsers ChromeHeadless
+  # dev work flow => testing
+  - cd $TRAVIS_BUILD_DIR/dev-workflow/d04-testing
+  - npm run lint
+  - npm test -- --watch false --browsers ChromeHeadless

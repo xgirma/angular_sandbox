@@ -18,6 +18,27 @@ describe('ValueService with TestBed', () => {
     service.setValue('new value');
     expect(service.getValue()).toBe('new value');
   });
+
+  it('#getObservableValue should return value from observable', (done: DoneFn) => {
+    service.getObservableValue().subscribe(value => {
+      expect(value).toBe('observable value');
+      done();
+    });
+  });
+
+  it('getPromiseValue should return value from a promise', (done: DoneFn) => {
+    service.getPromiseValue().then(value => {
+      expect(value).toBe('promise value');
+      done();
+    });
+  });
+
+  it('#getObservableDelayValue should return value from observable', (done: DoneFn) => {
+    service.getObservableDelayValue().subscribe(value => {
+      expect(value).toBe('observable delay value');
+      done();
+    });
+  });
 });
 
 describe('MasterService with TestBed', () => {
