@@ -1,5 +1,5 @@
 # Angular Sandbox
-[![Build Status](https://travis-ci.com/xgirma/angular_sandbox.svg?branch=master)](https://travis-ci.com/xgirma/angular_sandbox)
+[![GitHub Actions status | xgirma/angular_sandbox](https://github.com/xgirma/angular_sandbox/workflows/Node%20CI/badge.svg)](https://github.com/https://github.com/xgirma/angular_sandbox/actions?workflow=Node%20CI)
 
 A sandbox for the official Angular documentation.
 
