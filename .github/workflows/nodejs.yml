@@ -20,5 +20,9 @@ jobs:
     - name: npm install, build, and test
       run: |
         npm ci
+        npm install -g @angular/cli
       env:
         CI: true
+    - name: tour-of-heroes-app
+      working-directory: ./fundamentals/f01-tour-of-heroes-app
+      npm run lint
