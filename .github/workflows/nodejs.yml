@@ -17,13 +17,13 @@ jobs:
       uses: actions/setup-node@v1
       with:
         node-version: ${{ matrix.node-version }}
-    - name: npm install, build, and test
+    - name: npm install root, @angular/cli
       run: |
         npm ci
         npm install -g @angular/cli
       env:
         CI: true
-    - name: tour-of-heroes-app
+    - name: tour-of-heroes-app lint, build, unit and e2e test
       working-directory: ./fundamentals/f01-tour-of-heroes-app
       run: |
         npm run lint
