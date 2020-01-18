@@ -20,7 +20,7 @@ A sandbox for the official Angular documentation.
     * Pipes :construction:
 
 ## Forms
-1 Introduction: :heavy_check_mark:
+1. Introduction: :heavy_check_mark:
 2. Reactive Forms: :heavy_check_mark:
 3. Template-driven forms :construction:
 4. Form validation :construction:
