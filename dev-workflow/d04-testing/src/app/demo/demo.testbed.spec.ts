@@ -57,7 +57,7 @@ describe('MasterService with TestBed', () => {
     valueServiceSpy = TestBed.get(ValueService);
   });
 
-  it('#getValue sould return stubbed value from a spy', () => {
+  it('#getValue should return stubbed value from a spy', () => {
     const stubValue = 'stub value';
     valueServiceSpy.getValue.and.returnValue(stubValue);
 
