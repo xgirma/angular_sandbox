@@ -1,4 +1,4 @@
-name: Node CI
+name: tour-of-heroes-app
 
 on: [push]
 
@@ -27,3 +27,5 @@ jobs:
       working-directory: ./fundamentals/f01-tour-of-heroes-app
       run: |
         npm run lint
+        npm run build
+        npm run test -- --configuration=ci
