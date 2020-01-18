@@ -18,6 +18,7 @@ A sandbox for the official Angular documentation.
     * Attribute Directives :heavy_check_mark:
     * Structural Directives :construction:
     * Pipes :construction:
+
 ## Forms
 1 Introduction: :heavy_check_mark:
 2. Reactive Forms: :heavy_check_mark:
