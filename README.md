@@ -18,12 +18,13 @@ A sandbox for the official Angular documentation.
     * Attribute Directives :heavy_check_mark:
     * Structural Directives :construction:
     * Pipes :construction:
-4. Forms :construction:
-    * Introduction: :heavy_check_mark:
-    * Reactive Forms: :heavy_check_mark:
-    * Template-driven forms :construction:
-    * Form validation :construction:
-    * Dynamic Forms :construction:
-5. Techniques
-6. Dev Workflow
-    * Testing :construction:
+## Forms
+1 Introduction: :heavy_check_mark:
+2. Reactive Forms: :heavy_check_mark:
+3. Template-driven forms :construction:
+4. Form validation :construction:
+5. Dynamic Forms :construction:
+
+## Techniques
+## Dev Workflow
+4. Testing :construction:
