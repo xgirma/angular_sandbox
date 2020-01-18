@@ -25,4 +25,5 @@ jobs:
         CI: true
     - name: tour-of-heroes-app
       working-directory: ./fundamentals/f01-tour-of-heroes-app
+      run: |
         npm run lint
