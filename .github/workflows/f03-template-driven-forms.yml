@@ -1,0 +1,27 @@
+name: template-driven-forms
+
+on: [push]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v1
+    - name: Use Node.js ${{ matrix.node-version }}
+      uses: actions/setup-node@v1
+      with:
+        node-version: '12.x'
+    - name: npm install, build, and test
+      run: |
+        npm ci
+        npm install -g @angular/cli
+      env:
+        CI: true
+    - name: template-driven-forms lint, build, unit test
+      working-directory: ./fundamentals/f04-forms/f03-template-driven-forms
+      run: |
+          npm run lint
+          npm run build
+          npm run test -- --configuration=ci --no-watch --no-progress --code-coverage

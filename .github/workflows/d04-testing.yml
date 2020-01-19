@@ -1,0 +1,27 @@
+name: testing
+
+on: [push]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v1
+    - name: Use Node.js ${{ matrix.node-version }}
+      uses: actions/setup-node@v1
+      with:
+        node-version: '12.x'
+    - name: testing install, build, and test
+      run: |
+        npm ci
+        npm install -g @angular/cli
+      env:
+        CI: true
+    - name: testing lint, build, unit test
+      working-directory: ./dev-workflow/d04-testing
+      run: |
+          npm run lint
+          npm run build
+          npm run test -- --configuration=ci --no-watch --no-progress --code-coverage
