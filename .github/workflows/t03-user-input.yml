@@ -24,7 +24,7 @@ jobs:
       env:
         CI: true
     - name: user-input lint, build, unit test
-      working-directory: ./fundamentals/f03-components-and-templates/t02-user-input
+      working-directory: ./fundamentals/f03-components-and-templates/t03-user-input
       run: |
           npm run lint
           npm run build
