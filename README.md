@@ -27,4 +27,4 @@ A sandbox for the official Angular documentation.
 
 ## Techniques
 ## Dev Workflow
-4. Testing :construction:
+4. Testing :construction: [![GitHub Actions status | xgirma/angular_sandbox](https://github.com/xgirma/angular_sandbox/workflows/testing/badge.svg)](https://github.com/xgirma/angular_sandbox/actions?workflow=testing)
