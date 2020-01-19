@@ -23,9 +23,9 @@ jobs:
         npm install -g @angular/cli
       env:
         CI: true
-    - name: tour-of-heroes-app lint, build, unit and e2e test
+    - name: displaying-data lint, build, unit test
       working-directory: ./fundamentals/f03-components-and-templates/t01-displaying-data
       run: |
           npm run lint
           npm run build
-          npm run test -- --configuration=ci --watch=false --code-coverage:  
+          npm run test -- --configuration=ci --no-watch --no-progress --code-coverage 
