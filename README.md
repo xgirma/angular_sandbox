@@ -14,7 +14,7 @@ A sandbox for the official Angular documentation.
     * Component Style :construction:
     * Dynamic Components :construction:
     * Angular Elements :construction:
-    * Attribute Directives :heavy_check_mark:
+    * Attribute Directives [![GitHub Actions status | xgirma/angular_sandbox](https://github.com/xgirma/angular_sandbox/workflows/attribute-directives/badge.svg)](https://github.com/xgirma/angular_sandbox/actions?workflow=attribute-directives)
     * Structural Directives :construction:
     * Pipes :construction:
 
