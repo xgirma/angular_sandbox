@@ -8,9 +8,9 @@ A sandbox for the official Angular documentation.
 3. Components & templates
     * Displaying Data [![GitHub Actions status | xgirma/angular_sandbox](https://github.com/xgirma/angular_sandbox/workflows/displaying-data/badge.svg)](https://github.com/xgirma/angular_sandbox/actions?workflow=displaying-data)
     * Template Syntax :construction: [![GitHub Actions status | xgirma/angular_sandbox](https://github.com/xgirma/angular_sandbox/workflows/template-syntax/badge.svg)](https://github.com/xgirma/angular_sandbox/actions?workflow=template-syntax)
-    * User Input [![GitHub Actions status | xgirma/angular_sandbox](https://github.com/xgirma/angular_sandbox/workflows/user-input/badge.svg)](https://github.com/xgirma/angular_sandbox/actions?workflow=user-input)
+    * User Input [![GitHub Actions status | xgirma/angular_sandbox](https://github.com/xgirma/angular_sandbox/workflows/component-interaction/badge.svg)](https://github.com/xgirma/angular_sandbox/actions?workflow=component-interaction)
     * Lifecycle Hooks :construction:
-    * Component Interaction :construction:
+    * Component Interaction [![GitHub Actions status | xgirma/angular_sandbox](https://github.com/xgirma/angular_sandbox/workflows/user-input/badge.svg)](https://github.com/xgirma/angular_sandbox/actions?workflow=user-input)
     * Component Style :construction:
     * Dynamic Components :construction:
     * Angular Elements :construction:
