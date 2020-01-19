@@ -16,7 +16,7 @@ jobs:
     - name: npm install, build, and test
       run: |
         npm ci
-        npm install @angular/cli
+        npm install -g @angular/cli
       env:
         CI: true
     - name: template-driven-forms lint, build, unit test
