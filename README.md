@@ -6,7 +6,7 @@ A sandbox for the official Angular documentation.
 1. Tour of Heroes App :heavy_check_mark: [![GitHub Actions status | xgirma/angular_sandbox](https://github.com/xgirma/angular_sandbox/workflows/tour-of-heroes-app/badge.svg)](https://github.com/xgirma/angular_sandbox/actions?workflow=tour-of-heroes-app)
 2. Architecture :construction:
 3. Components & templates :construction:
-    * Displaying Data :heavy_check_mark:
+    * Displaying Data :heavy_check_mark: [![GitHub Actions status | xgirma/angular_sandbox](https://github.com/xgirma/angular_sandbox/workflows/displaying-data/badge.svg)](https://github.com/xgirma/angular_sandbox/actions?workflow=displaying-data)
     * Template Syntax :construction:
     * User Input :heavy_check_mark:
     * Lifecycle Hooks :construction:
