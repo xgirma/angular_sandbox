@@ -1,0 +1,31 @@
+name: template-syntax
+
+on: [push]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node-version: [8.x, 10.x, 12.x]
+
+    steps:
+    - uses: actions/checkout@v1
+    - name: Use Node.js ${{ matrix.node-version }}
+      uses: actions/setup-node@v1
+      with:
+        node-version: ${{ matrix.node-version }}
+    - name: npm install root, @angular/cli
+      run: |
+        npm ci
+        npm install -g @angular/cli
+      env:
+        CI: true
+    - name: template-syntax lint, build, unit test
+      working-directory: ./fundamentals/f03-components-and-templates/t02-template-syntax
+      run: |
+          npm run lint
+          npm run build
+          npm run test -- --configuration=ci --no-watch --no-progress --code-coverage
