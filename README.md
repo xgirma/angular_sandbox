@@ -21,7 +21,7 @@ A sandbox for the official Angular documentation.
 ## Forms
 1. Introduction: [![GitHub Actions status | xgirma/angular_sandbox](https://github.com/xgirma/angular_sandbox/workflows/form-intro/badge.svg)](https://github.com/xgirma/angular_sandbox/actions?workflow=form-intro)
 2. Reactive Forms: [![GitHub Actions status | xgirma/angular_sandbox](https://github.com/xgirma/angular_sandbox/workflows/reactive-forms/badge.svg)](https://github.com/xgirma/angular_sandbox/actions?workflow=reactive-forms)
-3. Template-driven forms :construction:
+3. Template-driven forms :construction: [![GitHub Actions status | xgirma/angular_sandbox](https://github.com/xgirma/angular_sandbox/workflows/template-driven-forms/badge.svg)](https://github.com/xgirma/angular_sandbox/actions?workflow=template-driven-forms)
 4. Form validation :construction:
 5. Dynamic Forms :construction:
 
