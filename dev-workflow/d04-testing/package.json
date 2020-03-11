@@ -48,7 +48,7 @@
     "karma-spec-reporter": "0.0.32",
     "protractor": "5.4.3",
     "ts-node": "8.6.2",
-    "tslint": "5.11.0",
+    "tslint": "6.1.0",
     "typescript": "^3.7.4"
   }
 }
